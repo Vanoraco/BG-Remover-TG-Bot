@@ -159,6 +159,8 @@ BG-Remover-TG-Bot/
 - **[Contributing Guide](CONTRIBUTING.md)** - How to contribute to the project
 - **[GitHub Setup](SETUP_GITHUB.md)** - Complete repository setup guide
 
+> 💡 **Note**: All Mermaid diagrams are now GitHub-compatible and should render correctly!
+
 ## 🤖 How It Works
 
 **Quick Answer:** Your PC/server connects TO Telegram and waits for messages. Users never connect directly to your PC.

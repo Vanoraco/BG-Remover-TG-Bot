@@ -6,7 +6,7 @@ This document contains comprehensive flow diagrams showing how the Telegram Tran
 
 ```mermaid
 flowchart TD
-    A[User starts chat] --> B[/start command]
+    A[User starts chat] --> B[Start command]
     B --> C[Welcome message with transparency options]
     
     C --> D{User action?}
@@ -224,38 +224,35 @@ flowchart TD
 ## 🚀 Development and Deployment Flow
 
 ```mermaid
-gitgraph
-    commit id: "Initial Setup"
-    commit id: "Core Bot Logic"
-    commit id: "Transparency Features"
-    
-    branch develop
-    checkout develop
-    commit id: "Add Semi Mode"
-    commit id: "Add Soft Edges"
-    commit id: "Add Custom Opacity"
-    
-    checkout main
-    merge develop
-    commit id: "Release v1.0.0"
-    
-    branch feature/docker
-    checkout feature/docker
-    commit id: "Add Dockerfile"
-    commit id: "Add Docker Compose"
-    commit id: "Test Container"
-    
-    checkout main
-    merge feature/docker
-    commit id: "Release v1.1.0"
-    
-    branch hotfix/memory-leak
-    checkout hotfix/memory-leak
-    commit id: "Fix Memory Issue"
-    
-    checkout main
-    merge hotfix/memory-leak
-    commit id: "Release v1.1.1"
+graph TD
+    A[Initial Setup] --> B[Core Bot Logic]
+    B --> C[Transparency Features]
+
+    C --> D[Create develop branch]
+    D --> E[Add Semi Mode]
+    E --> F[Add Soft Edges]
+    F --> G[Add Custom Opacity]
+
+    G --> H[Merge to main]
+    H --> I[Release v1.0.0]
+
+    I --> J[Create feature/docker branch]
+    J --> K[Add Dockerfile]
+    K --> L[Add Docker Compose]
+    L --> M[Test Container]
+
+    M --> N[Merge to main]
+    N --> O[Release v1.1.0]
+
+    O --> P[Create hotfix branch]
+    P --> Q[Fix Memory Issue]
+    Q --> R[Merge to main]
+    R --> S[Release v1.1.1]
+
+    style A fill:#e1f5fe
+    style I fill:#e8f5e8
+    style O fill:#e8f5e8
+    style S fill:#ffcdd2
 ```
 
 ## ⚠️ Error Handling Flow
