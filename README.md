@@ -119,18 +119,60 @@ The bot can be configured through `config.py`:
 - **Model Settings**: InSPyReNet base mode with tracer_b7
 - **Processing Timeout**: 60 seconds maximum
 
-## Project Structure
+## 📁 Project Structure
 
 ```
-BGTGBot/
-├── bot.py                 # Main bot application
-├── image_processor.py     # Background removal logic
-├── config.py             # Configuration settings
-├── requirements.txt      # Python dependencies
-├── .env.example         # Environment variables template
-├── .gitignore           # Git ignore rules
-└── README.md            # This file
+BG-Remover-TG-Bot/
+├── 🤖 Core Application
+│   ├── bot.py                    # Main bot application
+│   ├── image_processor.py        # Transparency processing logic
+│   └── config.py                # Configuration settings
+├── 🔧 Setup & Testing
+│   ├── setup.py                # Automated setup script
+│   ├── test_setup.py           # Setup verification
+│   ├── test_transparency.py    # Transparency testing
+│   └── example_usage.py        # Usage examples
+├── 🐳 Deployment
+│   ├── Dockerfile              # Docker configuration
+│   ├── docker-compose.yml      # Docker Compose setup
+│   ├── railway.json           # Railway deployment config
+│   ├── deploy-railway.sh       # Railway deployment script
+│   └── deploy-digitalocean.sh  # DigitalOcean deployment script
+├── 📚 Documentation
+│   ├── docs/HOW_IT_WORKS.md    # How the bot communicates
+│   ├── docs/FLOW_DIAGRAMS.md   # System flow diagrams
+│   ├── CONTRIBUTING.md         # Contribution guidelines
+│   └── SETUP_GITHUB.md        # GitHub setup guide
+├── ⚙️ Configuration
+│   ├── requirements.txt        # Python dependencies
+│   ├── .env.example           # Environment template
+│   ├── .gitignore            # Git ignore rules
+│   └── Makefile              # Build commands
+└── README.md                  # This file
 ```
+
+## 📖 Documentation
+
+- **[Quick Reference](docs/QUICK_REFERENCE.md)** - Commands, troubleshooting, and cheat sheet
+- **[How It Works](docs/HOW_IT_WORKS.md)** - Understand how the bot communicates with Telegram
+- **[Flow Diagrams](docs/FLOW_DIAGRAMS.md)** - Visual system architecture and flows
+- **[Contributing Guide](CONTRIBUTING.md)** - How to contribute to the project
+- **[GitHub Setup](SETUP_GITHUB.md)** - Complete repository setup guide
+
+## 🤖 How It Works
+
+**Quick Answer:** Your PC/server connects TO Telegram and waits for messages. Users never connect directly to your PC.
+
+When you run `python bot.py`:
+1. **Your PC connects** to Telegram's servers
+2. **Continuously polls** for new messages every few seconds
+3. **When user sends image** → Telegram notifies your PC
+4. **Your PC downloads** image from Telegram
+5. **AI processes** image with InSPyReNet model
+6. **Your PC uploads** result back to Telegram
+7. **Telegram delivers** processed image to user
+
+For detailed explanation with diagrams, see **[How It Works](docs/HOW_IT_WORKS.md)**.
 
 ## Technical Details
 
